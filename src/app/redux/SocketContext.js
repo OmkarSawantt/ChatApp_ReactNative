@@ -14,9 +14,11 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     const setupSocket = async () => {
       if (user) {
-        const token = await AsyncStorage.getItem('token'); // Retrieve token from AsyncStorage
+        const token = await AsyncStorage.getItem('token');
+        console.log(token);
 
-        const socket = io(process.env.REACT_APP_ENDPOINT_URL, {
+
+        const socket = io('https://chat-backend-z2ic.onrender.com', {
           auth: { token },
         });
 

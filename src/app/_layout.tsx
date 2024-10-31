@@ -6,11 +6,13 @@ import {Provider} from 'react-redux'
 import { store } from './redux/store';
 export default function Layout() {
   return (
-    <SocketProvider>
-      <Provider store={store}>
+    <>
+    <Provider store={store}>
+      <SocketProvider>
         <Slot />
         <Toast />
-      </Provider>
-    </SocketProvider>
+      </SocketProvider>
+</Provider>
+    </>
   );
 }

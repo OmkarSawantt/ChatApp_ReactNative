@@ -29,7 +29,7 @@ export default function Checkpassword() {
           visibilityTime: 2000,
         });
         await AsyncStorage.setItem('token', res.token);
-        router.push('/');
+        router.push('/chat');
       }
 
 
